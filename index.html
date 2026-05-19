@@ -138,8 +138,6 @@ required
 
 <option>Sexual Exploitation Concern</option>
 
-<option>Inappropriate Private Video Calls</option>
-
 <option>Fake Account</option>
 
 <option>Spam Activity</option>
@@ -198,24 +196,86 @@ document.getElementById(
 
 e.preventDefault();
 
-let profile =
-document.getElementById("profile").value;
+let reason =
+document.getElementById("reason").value;
 
-if(profile.trim()===""){
+let reportUrl =
+"https://www.facebook.com/report";
 
-alert("Enter Facebook profile link");
-return;
+/* CATEGORY BASED REPORT FORMS */
+
+switch(reason){
+
+case "18+ Content":
+reportUrl =
+"https://m.facebook.com/help/contact/209046679279097";
+break;
+
+case "Sexual Service Promotion":
+reportUrl =
+"https://m.facebook.com/help/contact/209046679279097";
+break;
+
+case "Adult Video Call Service":
+reportUrl =
+"https://m.facebook.com/help/contact/209046679279097";
+break;
+
+case "Explicit Video Call Activity":
+reportUrl =
+"https://m.facebook.com/help/contact/209046679279097";
+break;
+
+case "Selling Adult Content":
+reportUrl =
+"https://m.facebook.com/help/contact/209046679279097";
+break;
+
+case "Sexual Exploitation Concern":
+reportUrl =
+"https://m.facebook.com/help/contact/209046679279097";
+break;
+
+case "Fake Account":
+reportUrl =
+"https://m.facebook.com/help/contact/295309487309948";
+break;
+
+case "Spam Activity":
+reportUrl =
+"https://m.facebook.com/help/contact/274459462613911";
+break;
+
+case "Harassment":
+reportUrl =
+"https://m.facebook.com/help/contact/360241667357478";
+break;
+
+case "Violence":
+reportUrl =
+"https://m.facebook.com/help/contact/584460464982589";
+break;
+
+case "Scam / Fraud":
+reportUrl =
+"https://m.facebook.com/help/contact/228813257197480";
+break;
+
+default:
+reportUrl =
+"https://www.facebook.com/report";
 
 }
+
+/* SHOW SUCCESS */
 
 document.getElementById(
 "successBox"
 ).style.display="block";
 
-/* Direct Facebook Mobile Report Form */
+/* OPEN FACEBOOK FORM */
 
-window.location.href =
-"https://m.facebook.com/help/contact/209046679279097";
+window.location.href = reportUrl;
 
 });
 
