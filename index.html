@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GKH Report Center</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#020617;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+overflow-x:hidden;
+}
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:
+radial-gradient(circle at top left,#1d4ed8 0%,transparent 30%),
+radial-gradient(circle at bottom right,#2563eb 0%,transparent 30%);
+z-index:-1;
+opacity:0.25;
+}
+
+.container{
+width:100%;
+max-width:430px;
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:28px;
+box-shadow:0 0 40px rgba(0,0,0,0.5);
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+width:80px;
+height:80px;
+margin:auto;
+margin-bottom:18px;
+border-radius:24px;
+background:linear-gradient(135deg,#2563eb,#1e40af);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:34px;
+font-weight:700;
+color:white;
+box-shadow:0 0 25px rgba(37,99,235,0.5);
+}
+
+h1{
+text-align:center;
+color:white;
+font-size:34px;
+margin-bottom:8px;
+}
+
+.subtitle{
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+margin-bottom:28px;
+line-height:1.6;
+}
+
+label{
+display:block;
+margin-top:18px;
+margin-bottom:10px;
+color:#e2e8f0;
+font-size:14px;
+font-weight:500;
+}
+
+input,
+select{
+width:100%;
+padding:15px;
+border:none;
+outline:none;
+border-radius:18px;
+background:#172036;
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+input:focus,
+select:focus{
+background:#1e293b;
+box-shadow:0 0 0 2px #2563eb;
+}
+
+.upload{
+margin-top:12px;
+background:#172036;
+padding:14px;
+border-radius:18px;
+color:#94a3b8;
+font-size:14px;
+}
+
+.stats{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+gap:10px;
+}
+
+.card{
+flex:1;
+background:#172036;
+padding:14px;
+border-radius:18px;
+text-align:center;
+}
+
+.card h2{
+color:white;
+font-size:20px;
+margin-bottom:4px;
+}
+
+.card p{
+color:#94a3b8;
+font-size:12px;
+}
+
+button{
+width:100%;
+padding:16px;
+margin-top:25px;
+border:none;
+border-radius:20px;
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.02);
+}
+
+.notice{
+margin-top:20px;
+text-align:center;
+color:#94a3b8;
+font-size:13px;
+line-height:1.7;
+}
+
+.footer{
+margin-top:25px;
+text-align:center;
+font-size:13px;
+color:#64748b;
+}
+
+.success{
+display:none;
+margin-top:18px;
+background:#052e16;
+padding:14px;
+border-radius:16px;
+color:#86efac;
+text-align:center;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+
+<div class="logo">G</div>
+
+<h1>GKH Report</h1>
+
+<p class="subtitle">
+Facebook Profile Report Submit Center
+</p>
+
+<form id="reportForm">
+
+<label>Facebook Profile Link</label>
+
+<input
+type="url"
+id="profile"
+placeholder="https://facebook.com/username"
+required
+>
+
+<label>Report Category</label>
+
+<select id="reason">
+
+<option>18+ Content</option>
+<option>Explicit Images</option>
+<option>Adult Videos</option>
+<option>Fake Account</option>
+<option>Spam Activity</option>
+<option>Harassment</option>
+<option>Violence</option>
+<option>Scam / Fraud</option>
+<option>Hate Speech</option>
+<option>Impersonation</option>
+<option>Child Safety Concern</option>
+<option>Suspicious Activity</option>
+<option>Nudity Content</option>
+<option>Copyright Content</option>
+<option>Threatening Behavior</option>
+
+</select>
+
+<label>Extra Details</label>
+
+<select id="details">
+
+<option>Profile sharing adult or inappropriate content publicly</option>
+
+<option>Posting explicit images/videos repeatedly</option>
+
+<option>Fake identity suspected on this account</option>
+
+<option>Spam or suspicious activity detected</option>
+
+<option>Violating Facebook community standards</option>
+
+<option>Harassing or abusing other users</option>
+
+<option>Using stolen pictures or information</option>
+
+<option>Sharing misleading or harmful content</option>
+
+<option>Threatening behavior reported</option>
+
+<option>Account involved in scam/fraud activity</option>
+
+<option>Nudity or sexual content visible publicly</option>
+
+<option>Unsafe content for younger audiences</option>
+
+</select>
+
+<label>Upload Screenshot</label>
+
+<div class="upload">
+<input type="file">
+</div>
+
+<div class="stats">
+
+<div class="card">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
+
+<div class="card">
+<h2>Secure</h2>
+<p>System</p>
+</div>
+
+</div>
+
+<button type="submit">
+Submit Report
+</button>
+
+<div class="success" id="successBox">
+Report page opened successfully
+</div>
+
+</form>
+
+<div class="notice">
+This system redirects users to the official Facebook reporting page.
+</div>
+
+<div class="footer">
+Powered by GKH
+</div>
+
+</div>
+
+<script>
+
+document
+.getElementById("reportForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let profile =
+document.getElementById("profile").value;
+
+if(profile.trim()===""){
+
+alert("Please enter profile link");
+return;
+
+}
+
+document.getElementById("successBox").style.display="block";
+
+window.open(
+"https://www.facebook.com/help/contact/209046679279097",
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+</html>
