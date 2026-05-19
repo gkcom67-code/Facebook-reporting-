@@ -179,7 +179,7 @@ Open Facebook Report
 </button>
 
 <div class="success" id="successBox">
-Facebook report page opened
+Facebook report form opened successfully
 </div>
 
 </form>
@@ -194,7 +194,7 @@ Powered by GKH
 
 document.getElementById(
 "reportForm"
-).addEventListener("submit",function(e){
+).addEventListener("submit", function(e){
 
 e.preventDefault();
 
@@ -203,7 +203,7 @@ document.getElementById("profile").value;
 
 if(profile.trim()===""){
 
-alert("Enter profile link");
+alert("Enter Facebook profile link");
 return;
 
 }
@@ -212,8 +212,10 @@ document.getElementById(
 "successBox"
 ).style.display="block";
 
+/* Direct Facebook Mobile Report Form */
+
 window.location.href =
-"https://www.facebook.com/report";
+"https://m.facebook.com/help/contact/209046679279097";
 
 });
 
